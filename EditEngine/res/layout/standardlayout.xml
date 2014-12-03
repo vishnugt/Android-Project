@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="96dp"
+        android:text="Use our Standard Editing Service if you are sure that you will not have to make any revisions or changes in your document later on. In this service, your document will be completely edited on English and literary grounds. There will be checks for grammar, punctuation, spelling, consistency, syntax, tone and overall correctness. We will give that final touch to your document: readying it for print or publication. Clients are expected not to make unwarranted changes of any form in the edited document furnished from our firm."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Standard Editing Service"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

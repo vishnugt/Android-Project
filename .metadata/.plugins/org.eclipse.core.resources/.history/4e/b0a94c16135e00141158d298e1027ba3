@@ -1,0 +1,422 @@
+package vishnugt.hemanthtry;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.Charset;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Map;
+import java.util.TimeZone;
+
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.StrictMode;
+import android.util.Base64;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+
+
+public class MainActivity extends Activity {
+
+
+	
+	Map<String, byte[]> hh;
+	MyDB mydb;
+	ImageView iv;
+	Bitmap bmtry;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		mydb=new MyDB(getApplicationContext());
+
+		
+		final DateFormat df = DateFormat.getTimeInstance();
+        df.setTimeZone(TimeZone.getTimeZone("gmt"));
+      
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy); 
+
+		
+		
+  //       Calendar c = Calendar.getInstance(); 
+    //    int seconds = c.get(Calendar.SECOND);
+    	setContentView(R.layout.activity_main);
+		iv=(ImageView)findViewById(R.id.imageView1);
+		TextView tv=(TextView) findViewById(R.id.output);
+//		tv.setText(String.valueOf(seconds));
+		int abc;
+		
+	        
+	      
+	}
+	
+	
+	public void waitwhat(View vvvv) throws InterruptedException
+	
+	{
+    	Calendar c = Calendar.getInstance(); 	
+    	TextView tv=(TextView) findViewById(R.id.output);
+		tv.setText(String.valueOf(c.get(Calendar.SECOND)));
+		int someshit=c.get(Calendar.SECOND);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		URL url = null;
+		try {
+			url = new URL("http://spider.nitt.edu/~vishnu/time.php");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//URL url = new URL("http://testgt.hol.es/masterslave/data.php");
+		URLConnection con = null;
+		try {
+			con = url.openConnection();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			InputStream in = null;
+			try {
+				in = con.getInputStream();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String encoding = con.getContentEncoding();
+			encoding = encoding == null ? "UTF-8" : encoding;
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			byte[] buf = new byte[8192];
+			int len = 0;
+			try {
+				while ((len = in.read(buf)) != -1)
+				{
+					baos.write(buf, 0, len);
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			String body = null;
+			try {
+				body = new String(baos.toByteArray(), encoding);
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			String reduced=body.substring(body.length() - 5, body.length()-1);
+			int something=Integer.parseInt(reduced);
+			tv.setText(reduced);
+			
+			
+			Thread.currentThread();
+			Thread.sleep((10000-something));
+		
+		MediaPlayer playr = MediaPlayer.create(MainActivity.this,R.raw.abcd);	        	
+       	
+		  playr.start();
+		
+		
+		
+		
+		
+
+
+	}	
+	public void waitwhatfunction(URL url2) throws InterruptedException
+	
+	
+	{
+		Uri uri2= Uri.parse(url2.toString());
+		Calendar c = Calendar.getInstance(); 	
+    	TextView tv=(TextView) findViewById(R.id.output);
+		tv.setText(String.valueOf(c.get(Calendar.SECOND)));
+		int someshit=c.get(Calendar.SECOND);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		URL url = null;
+		try {
+			url = new URL("http://spider.nitt.edu/~vishnu/time.php");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//URL url = new URL("http://testgt.hol.es/masterslave/data.php");
+		URLConnection con = null;
+		try {
+			con = url.openConnection();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			InputStream in = null;
+			try {
+				in = con.getInputStream();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String encoding = con.getContentEncoding();
+			encoding = encoding == null ? "UTF-8" : encoding;
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			byte[] buf = new byte[8192];
+			int len = 0;
+			try {
+				while ((len = in.read(buf)) != -1)
+				{
+					baos.write(buf, 0, len);
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			String body = null;
+			try {
+				body = new String(baos.toByteArray(), encoding);
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			String reduced=body.substring(body.length() - 5, body.length()-1);
+			int something=Integer.parseInt(reduced);
+			tv.setText(reduced);
+			
+			
+			Thread.currentThread();
+			Thread.sleep((10000-something));
+		
+		MediaPlayer playr = MediaPlayer.create(MainActivity.this,uri2);	        	
+       	
+		  playr.start();
+		
+		
+		
+		
+		
+
+
+	}
+	
+	
+	
+	
+	
+	
+public void showFileChooser(View vvvvvvv)
+{
+	File mPath = new File(Environment.getExternalStorageDirectory() + "//DIR//");
+    FileDialog fileDialog = new FileDialog(this, mPath);
+    fileDialog.setFileEndsWith(".mp3");
+    fileDialog.addFileListener(new FileDialog.FileSelectedListener() {
+        public void fileSelected(File file) { 
+        	TextView tv=(TextView)findViewById(R.id.output);
+            
+        	
+            Log.d(getClass().getName(), "selected file " + file.toString());
+            tv.setText(file.toString());
+            try {
+				try {
+					waitwhatfunction(file.toURL());
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            }
+    });
+    //fileDialog.addDirectoryListener(new FileDialog.DirectorySelectedListener() {
+    //  public void directorySelected(File directory) {
+    //      Log.d(getClass().getName(), "selected dir " + directory.toString());
+    //  }
+    //});
+    //fileDialog.setSelectDirectoryOption(false);
+    fileDialog.showDialog();
+    
+    
+}
+
+
+public void savetocard(View vvvvv) throws IOException
+{
+	String root = Environment.getExternalStorageDirectory().toString();
+	TextView tv=(TextView)findViewById(R.id.output);
+	tv.setText(root);
+	FileOutputStream os;
+	//dirName = "/mydirectory/";
+	          File sdCard = Environment.getExternalStorageDirectory();
+	                File dir = new File (sdCard.getAbsolutePath() + root+"/motorindiasavedcache");
+	                dir.mkdirs();
+	                //File file = new File(this.getExternalFilesDir(null), this.dirName+fileName); //this function give null pointer exception so im using other one
+	                File file = new File(dir, "/motorindiasavedcache"+"/abc.jpeg");
+	                os = new FileOutputStream(file);
+	            bitmap.compress(CompressFormat.PNG, 100, os);
+	            os.flush();
+	            os.close();
+	        	}
+	
+	
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	
+public void showfromdb(View view)
+{
+	
+
+
+	EditText et=(EditText)findViewById(R.id.editText1);
+	mydb.createRecords(et.getText().toString(), et.getText().toString());
+
+    
+}	
+
+    public void asdf(View view){
+    		TextView tv=(TextView)findViewById(R.id.output);
+    	  
+        new LongOperation().execute("");
+    }
+
+    private class LongOperation extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+        	
+
+        	URL url = null;
+			try {
+				url = new URL("http://www.geanimation.com/images/products/4325.jpg");
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+					} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    			
+            return null;
+        }
+        
+        
+
+        public Drawable LoadImageFromWebOperations(String url) {
+    	    try {
+    	        InputStream is = (InputStream) new URL(url).getContent();
+    	        Drawable d = Drawable.createFromStream(is, "test image by VishnuGt");
+    	        return d;
+    	    } catch (Exception e) {
+    	        return null;
+    	    }
+    	}
+String body;
+JSONObject jObject;
+int a;
+
+Bitmap bmp = null;
+        @Override
+        protected void onPostExecute(String result) {
+
+        	TextView tv=(TextView)findViewById(R.id.output);
+        	tv.setText("done");
+            //iv.setImageBitmap(bmtry);
+           //iv.setBackground(LoadImageFromWebOperations("http://www.geanimation.com/images/products/4325.jpg"));
+        	
+        	
+        	iv.setImageBitmap(bmp);
+        	
+        
+        
+        	Bitmap bm = bmp;
+        	ByteArrayOutputStream baos = new ByteArrayOutputStream();  
+        	bm.compress(Bitmap.CompressFormat.PNG, 100, baos); //bm is the bitmap object   
+        	byte[] b = baos.toByteArray();
+			String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+			byte[] b1 = encodedImage.getBytes();
+			b1 = encodedImage.getBytes(Charset.forName("UTF-8"));
+			bitmap = BitmapFactory.decodeByteArray(b1 , 0, b1 .length);
+			
+			
+			iv.setImageBitmap(bitmap);
+			
+        }
+        
+        
+        
+        public void playaudio(View v)
+        {
+        	//MediaPlayer mPlayer = MediaPlayer.create(v.getContext(), R.raw.abc);
+        	//mPlayer.start();
+        
+        }
+        
+        public void retrivedata(View v)
+        {
+
+        	
+        	Cursor cursor = mydb.selectRecords();
+
+        	String temptext=cursor.getString(0);       	
+        	TextView tv=(TextView)findViewById(R.id.output);
+        	tv.setText(temptext);
+        }
+
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+        }
+    }
+Bitmap bitmap;
+}

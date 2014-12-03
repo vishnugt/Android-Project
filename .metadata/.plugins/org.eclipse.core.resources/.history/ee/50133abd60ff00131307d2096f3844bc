@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="Type of service expected :"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioButton
+        android:id="@+id/rb21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginRight="31dp"
+        android:layout_marginTop="20dp"
+        android:text="Standard (Details)"
+        android:onClick="submitfunction" />
+
+    <RadioButton
+        android:id="@+id/rb22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/rb21"
+        android:layout_below="@+id/rb21"
+        android:onClick="rb22func"
+        android:text="Premium (Details)" />
+
+    <RadioButton
+        android:id="@+id/rb23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rb22"
+        android:layout_below="@+id/rb22"
+        android:onClick="rb23func"
+        android:text="Advanced (Details)" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rb23"
+        android:layout_marginTop="22dp"
+        android:text="Turn Around Time :"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rb25"
+        android:layout_below="@+id/rb25"
+        android:layout_marginTop="14dp"
+        android:text="Any Special Instructions :"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:ems="25"
+        android:minLines="3"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Submit"
+        android:onClick="submitfunction" />
+
+    <RadioButton
+        android:id="@+id/rb25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rb23"
+        android:layout_below="@+id/rb24"
+        android:text="Express (Not valid on documents having having word count greater than 200)" />
+
+    <RadioButton
+        android:id="@+id/rb24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rb25"
+        android:layout_centerVertical="true"
+        android:text="Normal" />
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="111dp"
+        android:text="Use our Premium Editing Service if you feel you may have to make some revisions or changes in your document later on. The Premium Editing Service offers the benefit of multiple rounds of editing, i.e., editing until you are completely satisfied with our job. We understand that it is perfectly natural to have certain revisions or updates incorporated in one's documents from time to time. To cater to the same, we encourage you to re-submit the document for subsequent rounds of editing without a penny being charged for the same."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Premium Editing Service"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

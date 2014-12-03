@@ -1,0 +1,22 @@
+package com.supercell.titan;
+
+final class be
+  implements Runnable
+{
+  be(String paramString) {}
+  
+  public final void run()
+  {
+    if (NativeFacebookManager.g() != null)
+    {
+      NativeFacebookManager.g();
+      NativeFacebookManager.l();
+    }
+  }
+}
+
+
+/* Location:           C:\Users\vishnu\Desktop\New folder (3)\classes_dex2jar.jar
+ * Qualified Name:     com.supercell.titan.be
+ * JD-Core Version:    0.7.0.1
+ */

@@ -1,0 +1,70 @@
+package vishnugt.childapp;
+
+import android.app.Activity;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.view.Menu;
+import android.widget.TextView;
+
+public class MainActivity extends Activity implements LocationListener{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy); 
+
+		tv=(TextView)findViewById(R.id.textView1);
+		
+		LocationManager lam = (LocationManager)getSystemService(Context.LOCATION_SERVICE); 
+		Location location = lam.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+	
+		 lat1 = location.getLatitude();
+		 //lon1 = location.getLongitude();
+		// tv.setText((int) (lat1+lon1));
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	Double lat1,lon1;
+	TextView tv;
+	@Override
+	public void onLocationChanged(Location location) 
+		{
+		 lat1 = location.getLatitude();
+		 lon1 = location.getLongitude();
+		 tv.setText((int) (lat1+lon1));
+		}	
+
+	@Override
+	public void onProviderDisabled(String arg0) {
+		// TODO Auto-generated method stub
+
+		 tv.setText((int) (lat1+lon1));	
+	}
+
+	@Override
+	public void onProviderEnabled(String arg0) {
+		// TODO Auto-generated method stub
+
+		 tv.setText((int) (lat1+lon1));
+	}
+
+	@Override
+	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+		// TODO Auto-generated method stub
+
+		 tv.setText((int) (lat1+lon1));
+	}
+}

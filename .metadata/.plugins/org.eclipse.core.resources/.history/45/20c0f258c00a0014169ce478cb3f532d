@@ -1,0 +1,56 @@
+package vishnugt.childapp;
+
+import java.io.IOException;
+
+import android.location.Location;
+import android.location.LocationListener;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.app.Activity;
+import android.view.Menu;
+
+public class MainActivity extends Activity implements LocationListener{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy); 
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	Double lat1,lon1;
+	@Override
+	public void onLocationChanged(Location location) 
+		{
+		 lat1 = location.getLatitude();
+		 lon1 = location.getLongitude();
+		
+		}
+
+	@Override
+	public void onProviderDisabled(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="If you feel that the subsequent revisions in you document will be few, you can avail our Advanced Editing Service for the very first round. In the first round, your document will be completely edited on English and literary grounds. There will be checks for grammar, punctuation, spelling, consistency, syntax, tone and overall correctness. In the subsequent rounds, we will edit only the revised parts of your document. As far as the subsequent rounds are concerned, you will only have to pay the 40% of the original price."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Advanced Editing Service"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

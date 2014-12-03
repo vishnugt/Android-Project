@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">	MotorIndia</string>
+    <string name="title_section1">	Articles</string>
+    <string name="title_section2">	Applications</string>
+    <string name="title_section3">	Components</string>
+    <string name="title_section4">	Aftermarket</string>
+    <string name="title_section5">	Corporate</string>
+    <string name="title_section6">	Events</string>
+    <string name="description">	An image relating to the article :p</string>
+    <string name="hello_world">	Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_display">DisplayActivity</string>
+    <string name="large">At the 2012 edition of Auto Expo, Meritor Commercial Vehicle India was out in full vigour, launching three new axles, much to the delight of its customers. The products delivering excellent field results were very well received in the market. But things soon took an adverse turn when the country’s commercial vehicle market entered one of its worst phases in its history – a slowdown which is yet to loosen its feverish grip on the industry.</string>
+    <string name="head"><b><strong>\n \n<h4> New products development, the key growth driver</h4></strong></b>\n</string>
+
+</resources>

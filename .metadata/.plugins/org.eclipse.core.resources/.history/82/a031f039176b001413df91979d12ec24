@@ -1,0 +1,68 @@
+
+package vishnugt.hemanthtry;
+
+
+import java.io.IOException;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.util.Log;
+
+public class MainActivity extends Activity
+{
+    private static final String TAG = "BTAudioActivity";
+
+    private MediaPlayer mPlayer = null;
+    private AudioManager amanager = null;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        amanager.setBluetoothScoOn(true);
+        amanager.setMode(0);
+        amanager.setMode(AudioManager.MODE_IN_CALL);
+
+        mPlayer = new MediaPlayer();
+
+        try {
+        	  AssetManager assetManager = this.getAssets();
+        	    AssetFileDescriptor fd;
+        	    try {
+        	        fd = assetManager.openFd("readioactive.mp3");
+        	        Log.d(TAG, "fd = " + fd);
+        	        mPlayer.setDataSource(fd.getFileDescriptor());
+        	        mPlayer.prepare();
+        	        Log.d(TAG, "start play music");
+        	        mPlayer.start();
+        	    } catch (IOException e) {
+        	        e.printStackTrace();
+        	    }
+        	    
+        	    mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+            mPlayer.prepare();
+
+            mPlayer.start();
+        } catch(Exception e) {
+            Log.e(TAG, e.toString());
+        }
+    }
+
+    @Override
+    public void onDestroy()
+    {
+        mPlayer.stop();
+        amanager.setMode(AudioManager.MODE_NORMAL);
+        amanager.setBluetoothScoOn(false);
+        super.onDestroy();
+    }
+}

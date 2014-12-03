@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type of Service Expected"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioButton
+        android:id="@+id/radioButton19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="23dp"
+        android:text="Standard"
+        android:onClick="radio19func" />
+
+    <RadioButton
+        android:id="@+id/radioButton29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButton19"
+        android:layout_below="@+id/radioButton19"
+        android:text="Premium"
+        
+        android:onClick="radio29func" />
+
+    <RadioButton
+        android:id="@+id/radioButton39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButton29"
+        android:layout_below="@+id/radioButton29"
+        android:text="Advanced"
+        
+        android:onClick="radio39func" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radioButton39"
+        android:layout_marginTop="30dp"
+        android:text="Turn around Time :"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioButton
+        android:id="@+id/radioButton49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButton39"
+        android:layout_centerVertical="true"
+        android:text="Normal"
+        android:onClick="radio49func" />
+
+    <RadioButton
+        android:id="@+id/radioButton59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButton49"
+        android:layout_below="@+id/radioButton49"
+        android:text="Express (Not valid on documents having having word count greater than 200)"
+        android:onClick="radio59func" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radioButton59"
+        android:layout_marginTop="29dp"
+        android:text="Any special instructions :"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Submit"
+        android:onClick="submitfunc" />
+
+    <EditText
+        android:id="@+id/editText11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:minLines="3"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView3"
+        android:ems="10" >
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/radioButton29"
+        android:layout_alignBottom="@+id/radioButton29"
+        android:layout_alignLeft="@+id/textView4"
+        android:text="(Details)"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#0000ff"
+   	android:textStyle="italic"
+   	android:onClick="prelayout"
+   	android:clickable="true" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/radioButton39"
+        android:layout_alignBottom="@+id/radioButton39"
+        android:layout_alignLeft="@+id/TextView01"
+        android:text="(Details)"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textColor="#0000ff"
+   	 android:textStyle="italic"
+   	 android:onClick="advlayout"
+   	 android:clickable="true"	/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/radioButton19"
+        android:layout_alignBottom="@+id/radioButton19"
+        android:layout_toRightOf="@+id/radioButton39"
+        android:clickable="true"
+        android:onClick="stdlayout"
+        android:text="(Details)"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#0000ff"
+        android:textStyle="italic" />
+
+</RelativeLayout>
